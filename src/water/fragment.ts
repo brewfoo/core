@@ -129,9 +129,11 @@ export class WaterFragment {
   }
 
   // https://www.homebrewtalk.com/forum/threads/calculating-bicarbonate-and-carbonate.473408/
-  private factors(
-    pH: number,
-  ): { fractions: CarbonateSpecies; proportion: number; adjustment: number } {
+  private factors(pH: number): {
+    fractions: CarbonateSpecies;
+    proportion: number;
+    adjustment: number;
+  } {
     const x1 = Math.pow(10, -4.4) - Math.pow(10, -pH);
     const x2 = Math.pow(10, pH - 14) - Math.pow(10, -4.4 - 14);
     const adjustment = 1000 * x1 - 1000 * x2;
