@@ -14,7 +14,7 @@ export class Hop {
   standTime = Duration.minutes(0);
   mass = new Mass(MassUnit.Gram, 1);
   alpha = 10;
-  wortTemperature = Temperature.boiling();
+  wortTemperature?: Temperature;
   multiplier?: number;
   utilization?: Percent;
 
@@ -35,7 +35,7 @@ export class Hop {
     formula: IBUFormula,
     batchVolume: Volume,
     wortGravity: Gravity,
-    ambientTemperature: Temperature,
+    ambientTemperature?: Temperature,
   ): number {
     if (this.utilization != null) {
       return this.utilization;
@@ -66,7 +66,7 @@ export class Hop {
     formula: IBUFormula,
     batchVolume: Volume,
     wortGravity: Gravity,
-    ambientTemperature: Temperature,
+    ambientTemperature?: Temperature,
   ): number {
     return new IBUCalc({
       mass: this.mass,

@@ -12,8 +12,8 @@ interface Params {
   batchVolume: Volume;
   boilTime: Duration;
   standTime?: Duration;
-  ambientTemperature: Temperature; // ambient temperature
-  wortTemperature?: Temperature; // wort temperature at the time of the hop stand
+  ambientTemperature?: Temperature; // ambient temperature
+  wortTemperature?: Temperature; // average hop stand wort temperature
   multiplier?: number;
 }
 
@@ -25,7 +25,7 @@ interface Params {
  *   wortGravity: new Gravity(GravityUnit.SG, 1.06),
  *   batchVolume: new Volume(VolumeUnit.USGallon, 5),
  *   boilTime: 60,
- *   ambientTemperature: new Temperature(TemperatureUnit.Fahrenheit, 68),
+ *   ambientTemperature: Temperature.ambient(),
  * });
  * ```
  */
@@ -82,7 +82,7 @@ export class UtilizationCalc {
   }
 
   private calc(fn: (min: number) => number): Percent {
-    const standTime = this.params.standTime ? this.params.standTime.minutes() : 0;
+    const standTime = this.params.standTime?.minutes() || 0;
     const multiplier = this.params.multiplier ?? 1.0;
 
     // calculate boil utilization
@@ -101,20 +101,21 @@ export class UtilizationCalc {
 
   // Calculates the temperature adjusted multiplier.
   private tam(): number {
-    const standTime = this.params.standTime ? this.params.standTime.minutes() : 0;
-    const wortTemperature = this.params.wortTemperature ?? Temperature.boiling();
-
-    const tk = (wortTemperature.convert(Kelvin) + this.temperature(standTime).convert(Kelvin)) / 2;
-    return 2.39 * Math.pow(10, 11) * Math.exp(-9773 / tk);
+    // Try to predict average wort temperature if none provided.
+    const wortTemperature = this.params.wortTemperature ?? this.predictedWortTemperature();
+    return 2.39 * Math.pow(10, 11) * Math.exp(-9773 / wortTemperature.convert(Kelvin));
   }
 
-  // Predict temperature after m mins
-  private temperature(min: number): Temperature {
-    const wortTemperature = this.params.wortTemperature ?? Temperature.boiling();
+  // Predicts the average wort temperature during hop stand.
+  private predictedWortTemperature(): Temperature {
+    const standTime = this.params.standTime?.minutes() || 0;
+    const ambientTemperature = this.params.ambientTemperature ?? Temperature.ambient();
 
     const k = Math.pow(this.params.batchVolume.L(), -0.243) / 46.242;
-    const a = this.params.ambientTemperature.C();
-    const c = a + (wortTemperature.C() - a) * Math.exp(-k * min);
-    return Temperature.celsius(c);
+    const a = ambientTemperature.C(); // ambient
+    const b = 100; // initial, boiling
+    const c = a + (b - a) * Math.exp(-k * standTime); // after stand time
+    const m = (b + c) / 2; // average
+    return Temperature.celsius(m);
   }
 }

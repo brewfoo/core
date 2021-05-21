@@ -23,6 +23,13 @@ export class Temperature {
     return this.celsius(100);
   }
 
+  /**
+   * Convenience constructor.
+   */
+  static ambient(): Temperature {
+    return this.celsius(20);
+  }
+
   private readonly value: number;
 
   /**

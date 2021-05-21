@@ -65,14 +65,14 @@ export class WaterProfile {
     }
 
     const ft = new WaterFragment(attrs);
-    this.calcium = ft.calcium == null ? this.calcium : ft.calcium;
-    this.magnesium = ft.magnesium == null ? this.magnesium : ft.magnesium;
-    this.sodium = ft.sodium == null ? this.sodium : ft.sodium;
-    this.chloride = ft.chloride == null ? this.chloride : ft.chloride;
-    this.sulphate = ft.sulphate == null ? this.sulphate : ft.sulphate;
-    this.bicarbonate = ft.bicarbonate == null ? this.bicarbonate : ft.bicarbonate;
-    this.alkalinity = ft.alkalinity == null ? this.alkalinity : ft.alkalinity;
-    this.pH = ft.pH == null ? this.pH : ft.pH;
+    this.calcium = ft.calcium ?? this.calcium;
+    this.magnesium = ft.magnesium ?? this.magnesium;
+    this.sodium = ft.sodium ?? this.sodium;
+    this.chloride = ft.chloride ?? this.chloride;
+    this.sulphate = ft.sulphate ?? this.sulphate;
+    this.bicarbonate = ft.bicarbonate ?? this.bicarbonate;
+    this.alkalinity = ft.alkalinity ?? this.alkalinity;
+    this.pH = ft.pH ?? this.pH;
   }
 
   /**

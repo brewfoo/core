@@ -11,13 +11,13 @@
     "lib/"
   ],
   "scripts": {
-    "doc": "typedoc -- out doc",
-    "lint": "eslint 'src/**/*.{ts,js}'",
-    "prettify": "prettier --write --config prettier.config.js 'src/**/*.{ts,js}'",
     "build": "tsc -p tsconfig.json && tsc -p tsconfig.cjs.json",
-    "default": "pnpm run lint && pnpm run test",
-    "all": "pnpm run default && pnpm run build",
-    "test": "jest"
+    "doc": "typedoc",
+    "fix.format": "prettier --write 'src/**/*.{ts,js}'",
+    "fix.lint": "eslint --fix 'src/**/*.{ts,js}'",
+    "test.format": "prettier --list-different 'src/**/*.{ts,js}'",
+    "test.lint": "eslint 'src/**/*.{ts,js}'",
+    "test.unit": "jest"
   },
   "devDependencies": {
     "@types/jest": "^26.0.23",
