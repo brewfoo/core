@@ -1,4 +1,4 @@
-import { roundN } from './util';
+import { roundN } from './index';
 
 describe('roundN', () => {
   it('should round', () => {

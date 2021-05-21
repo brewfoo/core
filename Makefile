@@ -12,7 +12,10 @@ test:
 prettify:
 	$(NPM_BIN)/prettier --write --config prettier.config.js 'src/**/*.{ts,js}'
 
-build: lib/core.js
+build: lib/esm/core.js lib/cjs/core.js
 
-lib/core.js: $(wildcard src/**) pnpm-lock.yaml
-	$(NPM_BIN)/tsc -p .
+lib/esm/core.js: tsconfig.json pnpm-lock.yaml $(wildcard src/**)
+	$(NPM_BIN)/tsc -p $<
+
+lib/cjs/core.js: tsconfig.cjs.json tsconfig.json pnpm-lock.yaml $(wildcard src/**)
+	$(NPM_BIN)/tsc -p $<
