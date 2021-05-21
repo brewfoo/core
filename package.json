@@ -1,7 +1,7 @@
 {
   "name": "@brewfoo/core",
   "author": "Black Square Media Ltd",
-  "license": "LGPL-3.0",
+  "license": "LGPL-3.0-or-later",
   "main": "./lib/cjs/index.js",
   "module": "./lib/esm/index.js",
   "types": "./lib/esm/index.d.ts",
