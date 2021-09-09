@@ -1,0 +1,408 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>@brewfoo/core</title>
+	<meta name="description" content="Documentation for @brewfoo/core">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<script async src="assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">@brewfoo/core</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<h1>@brewfoo/core</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<a href="#brewfoo-core" id="brewfoo-core" style="color: inherit; text-decoration: none;">
+					<h1>Brewfoo Core</h1>
+				</a>
+				<p>The aim of this project is to be the <strong>most comprehensive</strong> and <strong>most accurate</strong>
+					and <strong>fully free</strong> collection of core brewing formulae, calculations and conversions
+				written specifically for the web in <a href="https://www.typescriptlang.org/">TypeScript</a>.</p>
+				<a href="#features" id="features" style="color: inherit; text-decoration: none;">
+					<h2>Features</h2>
+				</a>
+				<ul>
+					<li>Basic quantity and unit conversions.</li>
+					<li>Collection of formulae and calculations.</li>
+					<li>Full recipe planning tool.</li>
+					<li>Water profile and treatment calculations.</li>
+				</ul>
+				<p>Please see <a href="http://brewfoo.github.io/core">TypeDoc</a> for API documentation.</p>
+				<a href="#examples" id="examples" style="color: inherit; text-decoration: none;">
+					<h2>Examples</h2>
+				</a>
+				<p>Simple quantities &amp; conversions:</p>
+				<pre><code class="language-ts"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">Mass</span><span style="color: #000000">, </span><span style="color: #001080">MassUnit</span><span style="color: #000000">, </span><span style="color: #001080">Temperature</span><span style="color: #000000">, </span><span style="color: #001080">TemperatureUnit</span><span style="color: #000000">, </span><span style="color: #001080">Volume</span><span style="color: #000000">, </span><span style="color: #001080">VolumeUnit</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;@brewfoo/core&#039;</span><span style="color: #000000">;</span>
+
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">mass</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Mass</span><span style="color: #000000">(</span><span style="color: #001080">MassUnit</span><span style="color: #000000">.</span><span style="color: #001080">Kilogram</span><span style="color: #000000">, </span><span style="color: #098658">3.5</span><span style="color: #000000">);</span>
+<span style="color: #001080">mass</span><span style="color: #000000">.</span><span style="color: #795E26">convert</span><span style="color: #000000">(</span><span style="color: #001080">MassUnit</span><span style="color: #000000">.</span><span style="color: #001080">Gram</span><span style="color: #000000">); </span><span style="color: #008000">// =&gt; 3500</span>
+<span style="color: #001080">mass</span><span style="color: #000000">.</span><span style="color: #795E26">convert</span><span style="color: #000000">(</span><span style="color: #001080">MassUnit</span><span style="color: #000000">.</span><span style="color: #001080">USPound</span><span style="color: #000000">); </span><span style="color: #008000">// =&gt; ~7.7</span>
+<span style="color: #001080">mass</span><span style="color: #000000">.</span><span style="color: #795E26">convert</span><span style="color: #000000">(</span><span style="color: #001080">MassUnit</span><span style="color: #000000">.</span><span style="color: #001080">USOunce</span><span style="color: #000000">); </span><span style="color: #008000">// =&gt; ~123.5</span>
+
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">vol</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Volume</span><span style="color: #000000">(</span><span style="color: #001080">VolumeUnit</span><span style="color: #000000">.</span><span style="color: #001080">Liter</span><span style="color: #000000">, </span><span style="color: #098658">20</span><span style="color: #000000">);</span>
+<span style="color: #001080">vol</span><span style="color: #000000">.</span><span style="color: #795E26">convert</span><span style="color: #000000">(</span><span style="color: #001080">VolumeUnit</span><span style="color: #000000">.</span><span style="color: #001080">USGallon</span><span style="color: #000000">); </span><span style="color: #008000">// =&gt; 5.3</span>
+
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">temp</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Temperature</span><span style="color: #000000">(</span><span style="color: #001080">TemperatureUnit</span><span style="color: #000000">.</span><span style="color: #001080">Celsius</span><span style="color: #000000">, </span><span style="color: #098658">19</span><span style="color: #000000">);</span>
+<span style="color: #001080">temp</span><span style="color: #000000">.</span><span style="color: #795E26">convert</span><span style="color: #000000">(</span><span style="color: #001080">TemperatureUnit</span><span style="color: #000000">.</span><span style="color: #001080">Fahrenheit</span><span style="color: #000000">); </span><span style="color: #008000">// =&gt; 66.2</span>
+</code></pre>
+				<p>Fermentation calculation:</p>
+				<pre><code class="language-ts"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">calc</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">FermentationCalc</span><span style="color: #000000">(</span>
+<span style="color: #000000">  </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Gravity</span><span style="color: #000000">(</span><span style="color: #001080">GravityUnit</span><span style="color: #000000">.</span><span style="color: #0070C1">SG</span><span style="color: #000000">, </span><span style="color: #098658">1.07</span><span style="color: #000000">),</span>
+<span style="color: #000000">  </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Gravity</span><span style="color: #000000">(</span><span style="color: #001080">GravityUnit</span><span style="color: #000000">.</span><span style="color: #0070C1">SG</span><span style="color: #000000">, </span><span style="color: #098658">1.015</span><span style="color: #000000">),</span>
+<span style="color: #000000">);</span>
+<span style="color: #001080">calc</span><span style="color: #000000">.</span><span style="color: #0070C1">AA</span><span style="color: #000000">; </span><span style="color: #008000">// =&gt; ~77.6%</span>
+<span style="color: #001080">calc</span><span style="color: #000000">.</span><span style="color: #0070C1">RA</span><span style="color: #000000">; </span><span style="color: #008000">// =&gt; ~62.7%</span>
+<span style="color: #001080">calc</span><span style="color: #000000">.</span><span style="color: #0070C1">ABV</span><span style="color: #000000">; </span><span style="color: #008000">// =&gt; ~7.24%</span>
+<span style="color: #001080">calc</span><span style="color: #000000">.</span><span style="color: #0070C1">ABW</span><span style="color: #000000">.</span><span style="color: #795E26">g</span><span style="color: #000000">(); </span><span style="color: #008000">// =&gt; ~5.67</span>
+<span style="color: #001080">calc</span><span style="color: #000000">.</span><span style="color: #001080">energy</span><span style="color: #000000">.</span><span style="color: #795E26">kcal</span><span style="color: #000000">(); </span><span style="color: #008000">// =&gt; ~65.07</span>
+</code></pre>
+				<p>IBU calculations:</p>
+				<pre><code class="language-ts"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">util</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">UtilizationCalc</span><span style="color: #000000">({</span>
+<span style="color: #000000">  </span><span style="color: #001080">wortGravity:</span><span style="color: #000000"> </span><span style="color: #001080">Gravity</span><span style="color: #000000">.</span><span style="color: #795E26">points</span><span style="color: #000000">(</span><span style="color: #098658">60</span><span style="color: #000000">),</span>
+<span style="color: #000000">  </span><span style="color: #001080">batchVolume:</span><span style="color: #000000"> </span><span style="color: #001080">Volume</span><span style="color: #000000">.</span><span style="color: #795E26">liter</span><span style="color: #000000">(</span><span style="color: #098658">20</span><span style="color: #000000">),</span>
+<span style="color: #000000">  </span><span style="color: #001080">boilTime:</span><span style="color: #000000"> </span><span style="color: #001080">Duration</span><span style="color: #000000">.</span><span style="color: #795E26">minutes</span><span style="color: #000000">(</span><span style="color: #098658">50</span><span style="color: #000000">),</span>
+<span style="color: #000000">  </span><span style="color: #001080">standTime:</span><span style="color: #000000"> </span><span style="color: #001080">Duration</span><span style="color: #000000">.</span><span style="color: #795E26">minutes</span><span style="color: #000000">(</span><span style="color: #098658">10</span><span style="color: #000000">),</span>
+<span style="color: #000000">});</span>
+<span style="color: #001080">util</span><span style="color: #000000">.</span><span style="color: #795E26">rager</span><span style="color: #000000">(); </span><span style="color: #008000">// =&gt; ~28.9</span>
+<span style="color: #001080">util</span><span style="color: #000000">.</span><span style="color: #795E26">tinseth</span><span style="color: #000000">(); </span><span style="color: #008000">// =&gt; ~20.8</span>
+
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">calc</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">IBUCalc</span><span style="color: #000000">({</span>
+<span style="color: #000000">  </span><span style="color: #001080">mass:</span><span style="color: #000000"> </span><span style="color: #001080">Mass</span><span style="color: #000000">.</span><span style="color: #795E26">kg</span><span style="color: #000000">(</span><span style="color: #098658">0.06</span><span style="color: #000000">),</span>
+<span style="color: #000000">  </span><span style="color: #001080">alpha:</span><span style="color: #000000"> </span><span style="color: #098658">10.0</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #001080">batchVolume:</span><span style="color: #000000"> </span><span style="color: #001080">Volume</span><span style="color: #000000">.</span><span style="color: #795E26">liter</span><span style="color: #000000">(</span><span style="color: #098658">20</span><span style="color: #000000">),</span>
+<span style="color: #000000">  </span><span style="color: #001080">utilization:</span><span style="color: #000000"> </span><span style="color: #098658">10</span><span style="color: #000000">,</span>
+<span style="color: #000000">});</span>
+<span style="color: #001080">calc</span><span style="color: #000000">.</span><span style="color: #001080">alphaMass</span><span style="color: #000000">.</span><span style="color: #795E26">g</span><span style="color: #000000">(); </span><span style="color: #008000">// =&gt; ~6.0</span>
+<span style="color: #001080">calc</span><span style="color: #000000">.</span><span style="color: #0070C1">IBU</span><span style="color: #000000">; </span><span style="color: #008000">// =&gt; ~30.0</span>
+</code></pre>
+				<p>Simple recipe:</p>
+				<pre><code class="language-ts"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">pale</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Fermentable</span><span style="color: #000000">({</span>
+<span style="color: #000000">  </span><span style="color: #001080">mass:</span><span style="color: #000000"> </span><span style="color: #001080">Mass</span><span style="color: #000000">.</span><span style="color: #795E26">kg</span><span style="color: #000000">(</span><span style="color: #098658">3.0</span><span style="color: #000000">),</span>
+<span style="color: #000000">  </span><span style="color: #001080">color:</span><span style="color: #000000"> </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Color</span><span style="color: #000000">(</span><span style="color: #001080">ColorUnit</span><span style="color: #000000">.</span><span style="color: #001080">Lovibond</span><span style="color: #000000">, </span><span style="color: #098658">3</span><span style="color: #000000">),</span>
+<span style="color: #000000">  </span><span style="color: #001080">power:</span><span style="color: #000000"> </span><span style="color: #001080">DiastaticPower</span><span style="color: #000000">.</span><span style="color: #795E26">lintner</span><span style="color: #000000">(</span><span style="color: #098658">60</span><span style="color: #000000">),</span>
+<span style="color: #000000">  </span><span style="color: #001080">extraction:</span><span style="color: #000000"> </span><span style="color: #001080">ExtractYield</span><span style="color: #000000">.</span><span style="color: #795E26">percent</span><span style="color: #000000">(</span><span style="color: #098658">80</span><span style="color: #000000">),</span>
+<span style="color: #000000">  </span><span style="color: #001080">isGrain:</span><span style="color: #000000"> </span><span style="color: #0000FF">true</span><span style="color: #000000">,</span>
+<span style="color: #000000">});</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">crystal</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Fermentable</span><span style="color: #000000">({</span>
+<span style="color: #000000">  </span><span style="color: #001080">mass:</span><span style="color: #000000"> </span><span style="color: #001080">Mass</span><span style="color: #000000">.</span><span style="color: #795E26">kg</span><span style="color: #000000">(</span><span style="color: #098658">0.4</span><span style="color: #000000">),</span>
+<span style="color: #000000">  </span><span style="color: #001080">color:</span><span style="color: #000000"> </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Color</span><span style="color: #000000">(</span><span style="color: #001080">ColorUnit</span><span style="color: #000000">.</span><span style="color: #001080">Lovibond</span><span style="color: #000000">, </span><span style="color: #098658">120</span><span style="color: #000000">),</span>
+<span style="color: #000000">  </span><span style="color: #001080">extraction:</span><span style="color: #000000"> </span><span style="color: #001080">ExtractYield</span><span style="color: #000000">.</span><span style="color: #795E26">percent</span><span style="color: #000000">(</span><span style="color: #098658">70</span><span style="color: #000000">),</span>
+<span style="color: #000000">  </span><span style="color: #001080">isGrain:</span><span style="color: #000000"> </span><span style="color: #0000FF">true</span><span style="color: #000000">,</span>
+<span style="color: #000000">});</span>
+
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">magnum</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Hop</span><span style="color: #000000">({</span>
+<span style="color: #000000">  </span><span style="color: #001080">boilTime:</span><span style="color: #000000"> </span><span style="color: #001080">Duration</span><span style="color: #000000">.</span><span style="color: #795E26">minutes</span><span style="color: #000000">(</span><span style="color: #098658">60</span><span style="color: #000000">),</span>
+<span style="color: #000000">  </span><span style="color: #001080">mass:</span><span style="color: #000000"> </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Mass</span><span style="color: #000000">(</span><span style="color: #001080">MassUnit</span><span style="color: #000000">.</span><span style="color: #001080">Gram</span><span style="color: #000000">, </span><span style="color: #098658">10</span><span style="color: #000000">),</span>
+<span style="color: #000000">  </span><span style="color: #001080">alpha:</span><span style="color: #000000"> </span><span style="color: #098658">13.8</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #001080">multiplier:</span><span style="color: #000000"> </span><span style="color: #098658">1.1</span><span style="color: #000000">,</span>
+<span style="color: #000000">});</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">simcoe</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Hop</span><span style="color: #000000">({</span>
+<span style="color: #000000">  </span><span style="color: #001080">boilTime:</span><span style="color: #000000"> </span><span style="color: #001080">Duration</span><span style="color: #000000">.</span><span style="color: #795E26">minutes</span><span style="color: #000000">(</span><span style="color: #098658">5</span><span style="color: #000000">),</span>
+<span style="color: #000000">  </span><span style="color: #001080">mass:</span><span style="color: #000000"> </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Mass</span><span style="color: #000000">(</span><span style="color: #001080">MassUnit</span><span style="color: #000000">.</span><span style="color: #001080">Gram</span><span style="color: #000000">, </span><span style="color: #098658">30</span><span style="color: #000000">),</span>
+<span style="color: #000000">  </span><span style="color: #001080">alpha:</span><span style="color: #000000"> </span><span style="color: #098658">11.3</span><span style="color: #000000">,</span>
+<span style="color: #000000">});</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">citra</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Hop</span><span style="color: #000000">({</span>
+<span style="color: #000000">  </span><span style="color: #001080">mass:</span><span style="color: #000000"> </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Mass</span><span style="color: #000000">(</span><span style="color: #001080">MassUnit</span><span style="color: #000000">.</span><span style="color: #001080">Gram</span><span style="color: #000000">, </span><span style="color: #098658">60</span><span style="color: #000000">),</span>
+<span style="color: #000000">  </span><span style="color: #001080">alpha:</span><span style="color: #000000"> </span><span style="color: #098658">12.0</span><span style="color: #000000">,</span>
+<span style="color: #000000">});</span>
+
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">recipe</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">RecipeCalc</span><span style="color: #000000">({</span>
+<span style="color: #000000">  </span><span style="color: #001080">attenuation:</span><span style="color: #000000"> </span><span style="color: #098658">78</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #001080">fermentables:</span><span style="color: #000000"> [</span><span style="color: #001080">pale</span><span style="color: #000000">, </span><span style="color: #001080">crystal</span><span style="color: #000000">],</span>
+<span style="color: #000000">  </span><span style="color: #001080">hops:</span><span style="color: #000000"> [</span><span style="color: #001080">magnum</span><span style="color: #000000">, </span><span style="color: #001080">simcoe</span><span style="color: #000000">, </span><span style="color: #001080">citra</span><span style="color: #000000">],</span>
+<span style="color: #000000">});</span>
+
+<span style="color: #001080">recipe</span><span style="color: #000000">.</span><span style="color: #0070C1">BG</span><span style="color: #000000">.</span><span style="color: #795E26">SG</span><span style="color: #000000">(); </span><span style="color: #008000">// =&gt; ~1.031</span>
+<span style="color: #001080">recipe</span><span style="color: #000000">.</span><span style="color: #0070C1">OG</span><span style="color: #000000">.</span><span style="color: #795E26">SG</span><span style="color: #000000">(); </span><span style="color: #008000">// =&gt; ~1.040</span>
+<span style="color: #001080">recipe</span><span style="color: #000000">.</span><span style="color: #0070C1">FG</span><span style="color: #000000">.</span><span style="color: #795E26">SG</span><span style="color: #000000">(); </span><span style="color: #008000">// =&gt; ~1.009</span>
+<span style="color: #001080">recipe</span><span style="color: #000000">.</span><span style="color: #001080">beerColor</span><span style="color: #000000">.</span><span style="color: #795E26">convert</span><span style="color: #000000">(</span><span style="color: #001080">ColorUnit</span><span style="color: #000000">.</span><span style="color: #0070C1">SRM</span><span style="color: #000000">); </span><span style="color: #008000">// =&gt; ~13.1</span>
+<span style="color: #001080">recipe</span><span style="color: #000000">.</span><span style="color: #0070C1">IBU</span><span style="color: #000000">; </span><span style="color: #008000">// =&gt; ~29.5</span>
+<span style="color: #001080">recipe</span><span style="color: #000000">.</span><span style="color: #0070C1">BUGU</span><span style="color: #000000">; </span><span style="color: #008000">// =&gt; ~0.74</span>
+<span style="color: #001080">recipe</span><span style="color: #000000">.</span><span style="color: #0070C1">ABV</span><span style="color: #000000">; </span><span style="color: #008000">// =&gt; ~4.1</span>
+<span style="color: #001080">recipe</span><span style="color: #000000">.</span><span style="color: #0070C1">ABW</span><span style="color: #000000">.</span><span style="color: #795E26">g</span><span style="color: #000000">(); </span><span style="color: #008000">// =&gt; ~3.2</span>
+<span style="color: #001080">recipe</span><span style="color: #000000">.</span><span style="color: #001080">energy</span><span style="color: #000000">.</span><span style="color: #795E26">kcal</span><span style="color: #000000">(); </span><span style="color: #008000">// =&gt; ~37</span>
+<span style="color: #001080">recipe</span><span style="color: #000000">.</span><span style="color: #0070C1">DP</span><span style="color: #000000">.</span><span style="color: #795E26">lintner</span><span style="color: #000000">(); </span><span style="color: #008000">// =&gt; ~52.9</span>
+
+<span style="color: #001080">recipe</span><span style="color: #000000">.</span><span style="color: #001080">waterUsage</span><span style="color: #000000">.</span><span style="color: #001080">boilVolume</span><span style="color: #000000">.</span><span style="color: #795E26">L</span><span style="color: #000000">(); </span><span style="color: #008000">// =&gt; ~25.3</span>
+<span style="color: #001080">recipe</span><span style="color: #000000">.</span><span style="color: #001080">waterUsage</span><span style="color: #000000">.</span><span style="color: #001080">totalVolume</span><span style="color: #000000">.</span><span style="color: #795E26">L</span><span style="color: #000000">(); </span><span style="color: #008000">// =&gt; ~29.7</span>
+<span style="color: #001080">recipe</span><span style="color: #000000">.</span><span style="color: #001080">postBoilAddition</span><span style="color: #000000"> = </span><span style="color: #001080">Volume</span><span style="color: #000000">.</span><span style="color: #795E26">liter</span><span style="color: #000000">(</span><span style="color: #098658">6</span><span style="color: #000000">);</span>
+<span style="color: #001080">recipe</span><span style="color: #000000">.</span><span style="color: #001080">waterUsage</span><span style="color: #000000">.</span><span style="color: #001080">boilVolume</span><span style="color: #000000">.</span><span style="color: #795E26">L</span><span style="color: #000000">(); </span><span style="color: #008000">// =&gt; ~19.1</span>
+<span style="color: #001080">recipe</span><span style="color: #000000">.</span><span style="color: #001080">waterUsage</span><span style="color: #000000">.</span><span style="color: #001080">totalVolume</span><span style="color: #000000">.</span><span style="color: #795E26">L</span><span style="color: #000000">(); </span><span style="color: #008000">// =&gt; ~23.5</span>
+</code></pre>
+				<p>Water profiles and treatment:</p>
+				<pre><code class="language-ts"><span style="color: #008000">// Create profile</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">london</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">WaterProfile</span><span style="color: #000000">({</span>
+<span style="color: #000000">  </span><span style="color: #001080">calcium:</span><span style="color: #000000"> </span><span style="color: #098658">100</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #001080">magnesium:</span><span style="color: #000000"> </span><span style="color: #098658">5</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #001080">sodium:</span><span style="color: #000000"> </span><span style="color: #098658">30</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #001080">sulphate:</span><span style="color: #000000"> </span><span style="color: #098658">50</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #001080">chloride:</span><span style="color: #000000"> </span><span style="color: #098658">50</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #001080">bicarbonate:</span><span style="color: #000000"> </span><span style="color: #098658">245</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #001080">alkalinity:</span><span style="color: #000000"> </span><span style="color: #098658">200</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #001080">pH:</span><span style="color: #000000"> </span><span style="color: #098658">7.7</span><span style="color: #000000">,</span>
+<span style="color: #000000">});</span>
+<span style="color: #001080">london</span><span style="color: #000000">.</span><span style="color: #795E26">hardness</span><span style="color: #000000">(); </span><span style="color: #008000">// =&gt; 270</span>
+<span style="color: #001080">london</span><span style="color: #000000">.</span><span style="color: #795E26">RA</span><span style="color: #000000">(); </span><span style="color: #008000">// =&gt; 126</span>
+<span style="color: #001080">london</span><span style="color: #000000">.</span><span style="color: #795E26">ratio</span><span style="color: #000000">(); </span><span style="color: #008000">// =&gt; 1.0</span>
+<span style="color: #001080">london</span><span style="color: #000000">.</span><span style="color: #795E26">cation</span><span style="color: #000000">(); </span><span style="color: #008000">// =&gt; 6.7</span>
+<span style="color: #001080">london</span><span style="color: #000000">.</span><span style="color: #795E26">anion</span><span style="color: #000000">(); </span><span style="color: #008000">// =&gt; 6.5</span>
+
+<span style="color: #008000">// Apply treatments</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">treated</span><span style="color: #000000"> = </span><span style="color: #001080">london</span><span style="color: #000000">.</span><span style="color: #795E26">treat</span><span style="color: #000000">(</span><span style="color: #001080">Volume</span><span style="color: #000000">.</span><span style="color: #795E26">liter</span><span style="color: #000000">(</span><span style="color: #098658">20</span><span style="color: #000000">), [</span>
+<span style="color: #000000">  </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">DilutionTreatment</span><span style="color: #000000">(</span><span style="color: #098658">10</span><span style="color: #000000">),</span>
+<span style="color: #000000">  </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">SaltTreatment</span><span style="color: #000000">(</span><span style="color: #001080">Salt</span><span style="color: #000000">.</span><span style="color: #001080">CalciumChloride</span><span style="color: #000000">, </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Mass</span><span style="color: #000000">(</span><span style="color: #001080">MassUnit</span><span style="color: #000000">.</span><span style="color: #001080">Gram</span><span style="color: #000000">, </span><span style="color: #098658">3</span><span style="color: #000000">)),</span>
+<span style="color: #000000">  </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">SaltTreatment</span><span style="color: #000000">(</span><span style="color: #001080">Salt</span><span style="color: #000000">.</span><span style="color: #001080">CalciumSulphate</span><span style="color: #000000">, </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Mass</span><span style="color: #000000">(</span><span style="color: #001080">MassUnit</span><span style="color: #000000">.</span><span style="color: #001080">Gram</span><span style="color: #000000">, </span><span style="color: #098658">3</span><span style="color: #000000">)),</span>
+<span style="color: #000000">  </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">AcidTreatment</span><span style="color: #000000">(</span><span style="color: #001080">Acid</span><span style="color: #000000">.</span><span style="color: #001080">Lactic</span><span style="color: #000000">, {</span>
+<span style="color: #000000">    </span><span style="color: #001080">volume:</span><span style="color: #000000"> </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Volume</span><span style="color: #000000">(</span><span style="color: #001080">VolumeUnit</span><span style="color: #000000">.</span><span style="color: #001080">Milliliter</span><span style="color: #000000">, </span><span style="color: #098658">2</span><span style="color: #000000">),</span>
+<span style="color: #000000">    </span><span style="color: #001080">concentration:</span><span style="color: #000000"> </span><span style="color: #098658">88</span><span style="color: #000000">,</span>
+<span style="color: #000000">  }),</span>
+<span style="color: #000000">]); </span><span style="color: #008000">// =&gt; { alkalinity: 122, bicarbonate: 150, calcium: 166, chloride: 117, magnesium: 5, pH: 7.7, sodium: 27, sulphate: 129 }</span>
+<span style="color: #001080">treated</span><span style="color: #000000">.</span><span style="color: #795E26">RA</span><span style="color: #000000">(); </span><span style="color: #008000">// =&gt; ~0.0</span>
+</code></pre>
+				<a href="#licence" id="licence" style="color: inherit; text-decoration: none;">
+					<h2>Licence</h2>
+				</a>
+				<p>Licensed under <a href="./COPYING">LGPLv3</a></p>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="modules.html">Exports</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-enum">
+						<a href="enums/AcidBlendType.html" class="tsd-kind-icon">Acid<wbr>Blend<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/AcidType.html" class="tsd-kind-icon">Acid<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/BeerColorFormula.html" class="tsd-kind-icon">Beer<wbr>Color<wbr>Formula</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/ColorUnit.html" class="tsd-kind-icon">Color<wbr>Unit</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/DiastaticPowerUnit.html" class="tsd-kind-icon">Diastatic<wbr>Power<wbr>Unit</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/DurationUnit.html" class="tsd-kind-icon">Duration<wbr>Unit</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/EnergyUnit.html" class="tsd-kind-icon">Energy<wbr>Unit</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/ExtractYieldUnit.html" class="tsd-kind-icon">Extract<wbr>Yield<wbr>Unit</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/GravityUnit.html" class="tsd-kind-icon">Gravity<wbr>Unit</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/IBUFormula.html" class="tsd-kind-icon">IBUFormula</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/MassUnit.html" class="tsd-kind-icon">Mass<wbr>Unit</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/SaltType.html" class="tsd-kind-icon">Salt<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/TemperatureUnit.html" class="tsd-kind-icon">Temperature<wbr>Unit</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/VolumeUnit.html" class="tsd-kind-icon">Volume<wbr>Unit</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/Acid.html" class="tsd-kind-icon">Acid</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/AcidBlend.html" class="tsd-kind-icon">Acid<wbr>Blend</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/AcidTreatment.html" class="tsd-kind-icon">Acid<wbr>Treatment</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/BeerColorCalc.html" class="tsd-kind-icon">Beer<wbr>Color<wbr>Calc</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/BoilTreatment.html" class="tsd-kind-icon">Boil<wbr>Treatment</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/Color.html" class="tsd-kind-icon">Color</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/DiastaticPower.html" class="tsd-kind-icon">Diastatic<wbr>Power</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/DilutionTreatment.html" class="tsd-kind-icon">Dilution<wbr>Treatment</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/Duration.html" class="tsd-kind-icon">Duration</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/Energy.html" class="tsd-kind-icon">Energy</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/ExtractYield.html" class="tsd-kind-icon">Extract<wbr>Yield</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/FermentationCalc.html" class="tsd-kind-icon">Fermentation<wbr>Calc</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/FinalGravityCalc.html" class="tsd-kind-icon">Final<wbr>Gravity<wbr>Calc</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/Gravity.html" class="tsd-kind-icon">Gravity</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/IBUCalc.html" class="tsd-kind-icon">IBUCalc</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/LimeTreatment.html" class="tsd-kind-icon">Lime<wbr>Treatment</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/Mass.html" class="tsd-kind-icon">Mass</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/RecipeCalc.html" class="tsd-kind-icon">Recipe<wbr>Calc</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/RecipeCalcFermentable.html" class="tsd-kind-icon">Recipe<wbr>Calc<wbr>Fermentable</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/RecipeCalcHop.html" class="tsd-kind-icon">Recipe<wbr>Calc<wbr>Hop</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/RefractometerCalc.html" class="tsd-kind-icon">Refractometer<wbr>Calc</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/Salt.html" class="tsd-kind-icon">Salt</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/SaltTreatment.html" class="tsd-kind-icon">Salt<wbr>Treatment</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/SpecificVolume.html" class="tsd-kind-icon">Specific<wbr>Volume</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/Temperature.html" class="tsd-kind-icon">Temperature</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/UtilizationCalc.html" class="tsd-kind-icon">Utilization<wbr>Calc</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/Volume.html" class="tsd-kind-icon">Volume</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/WaterProfile.html" class="tsd-kind-icon">Water<wbr>Profile</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/WaterTreatment.html" class="tsd-kind-icon">Water<wbr>Treatment</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/WaterUsage.html" class="tsd-kind-icon">Water<wbr>Usage</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/AcidSolution.html" class="tsd-kind-icon">Acid<wbr>Solution</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/ColorGroup.html" class="tsd-kind-icon">Color<wbr>Group</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/SaltContribution.html" class="tsd-kind-icon">Salt<wbr>Contribution</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#Percent" class="tsd-kind-icon">Percent</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="modules.html#populate" class="tsd-kind-icon">populate</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#roundN" class="tsd-kind-icon">roundN</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
