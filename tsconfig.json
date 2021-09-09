@@ -16,6 +16,11 @@
     "strict": true,
     "target": "es2016"
   },
+  "typedocOptions": {
+    "entryPoints": ["./src/index.ts"],
+    "out": "doc",
+    "json": ["./doc/typedoc.json"]
+  },
   "include": ["src/**/*.ts"],
   "exclude": ["src/**/*.test.ts"]
 }
