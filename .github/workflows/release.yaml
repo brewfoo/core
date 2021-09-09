@@ -2,6 +2,9 @@ name: Release
 on:
   release:
     types: [created]
+  pull_request:
+    branches:
+      - main
 env:
   node_version: 14.x
   pnpm_version: '5'
@@ -28,7 +31,7 @@ jobs:
           version: ${{ env.pnpm_version }}
           run_install: true
       - run: make rebuild doc
-      - run: pnpm publish
+      - run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - uses: JamesIves/github-pages-deploy-action@4.1.5

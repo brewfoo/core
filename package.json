@@ -6,7 +6,10 @@
   "module": "./lib/esm/index.js",
   "types": "./lib/esm/index.d.ts",
   "version": "0.1.0",
-  "repository": "github:brewfoo/core",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brewfoo/core.git"
+  },
   "files": [
     "lib/"
   ],
@@ -32,5 +35,14 @@
     "typedoc": "^0.21.9",
     "typescript": "^4.4.2",
     "typescript-formatter": "^7.2.2"
+  },
+  "description": "The aim of this project is to be the **most comprehensive** and **most accurate** and **fully free** collection of core brewing formulae, calculations and conversions written specifically for the web in [TypeScript](https://www.typescriptlang.org/).",
+  "bugs": {
+    "url": "https://github.com/brewfoo/core/issues"
+  },
+  "homepage": "https://github.com/brewfoo/core#readme",
+  "directories": {
+    "doc": "doc",
+    "lib": "lib"
   }
 }
