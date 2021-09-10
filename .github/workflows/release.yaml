@@ -28,9 +28,28 @@ jobs:
           version: ${{ env.pnpm_version }}
           run_install: true
       - run: make rebuild doc
-      - run: pnpm publish
+      - run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+  doc:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v2
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-build-pnpm-store-${{ env.node_version }}-${{ env.pnpm_version }}-${{ hashFiles('**/package.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-pnpm-store-${{ env.node_version }}-${{ env.pnpm_version }}-
+      - uses: actions/setup-node@v2
+        with:
+          node-version: ${{ env.node_version }}
+          registry-url: 'https://registry.npmjs.org'
+      - uses: pnpm/action-setup@v1.2.1
+        with:
+          version: ${{ env.pnpm_version }}
+          run_install: true
+      - run: make doc
       - uses: JamesIves/github-pages-deploy-action@4.1.5
         with:
           branch: gh-pages
