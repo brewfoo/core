@@ -4,7 +4,7 @@ on:
     types: [created]
 env:
   node_version: 14.x
-  pnpm_version: '5'
+  pnpm_version: '6'
 jobs:
   npm:
     runs-on: ubuntu-latest
@@ -13,21 +13,21 @@ jobs:
       packages: write
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/cache@v2
-        with:
-          path: ~/.pnpm-store
-          key: ${{ runner.os }}-build-pnpm-store-${{ env.node_version }}-${{ env.pnpm_version }}-${{ hashFiles('**/package.json') }}
-          restore-keys: |
-            ${{ runner.os }}-build-pnpm-store-${{ env.node_version }}-${{ env.pnpm_version }}-
       - uses: actions/setup-node@v2
         with:
           node-version: ${{ env.node_version }}
           registry-url: 'https://registry.npmjs.org'
-      - uses: pnpm/action-setup@v1.2.1
+      - uses: actions/cache@v2
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-
+      - uses: pnpm/action-setup@v2
         with:
           version: ${{ env.pnpm_version }}
           run_install: true
-      - run: make rebuild doc
+      - run: make rebuild
       - run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
@@ -35,17 +35,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/cache@v2
-        with:
-          path: ~/.pnpm-store
-          key: ${{ runner.os }}-build-pnpm-store-${{ env.node_version }}-${{ env.pnpm_version }}-${{ hashFiles('**/package.json') }}
-          restore-keys: |
-            ${{ runner.os }}-build-pnpm-store-${{ env.node_version }}-${{ env.pnpm_version }}-
       - uses: actions/setup-node@v2
         with:
           node-version: ${{ env.node_version }}
-          registry-url: 'https://registry.npmjs.org'
-      - uses: pnpm/action-setup@v1.2.1
+      - uses: actions/cache@v2
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-
+      - uses: pnpm/action-setup@v2
         with:
           version: ${{ env.pnpm_version }}
           run_install: true
