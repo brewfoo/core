@@ -2,6 +2,9 @@ name: Release
 on:
   release:
     types: [created]
+  pull_request:
+    branches:
+      - main
 env:
   node_version: 16.x
   pnpm_version: '7'
@@ -16,6 +19,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: ${{ env.node_version }}
+          registry-url: 'https://registry.npmjs.org'
       - uses: pnpm/action-setup@v2
         with:
           version: ${{ env.pnpm_version }}
@@ -58,7 +62,7 @@ jobs:
       - run: |
           pnpm install
           make doc
-      - uses: JamesIves/github-pages-deploy-action@4.3.3
+      - uses: JamesIves/github-pages-deploy-action@v4.3.3
         with:
           branch: gh-pages
           folder: doc
