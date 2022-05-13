@@ -7,8 +7,8 @@ on:
     branches:
       - main
 env:
-  node_version: 14.x
-  pnpm_version: '6'
+  node_version: 16.x
+  pnpm_version: '7'
 jobs:
   build:
     runs-on: ubuntu-latest

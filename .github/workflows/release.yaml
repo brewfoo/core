@@ -3,8 +3,8 @@ on:
   release:
     types: [created]
 env:
-  node_version: 14.x
-  pnpm_version: '6'
+  node_version: 16.x
+  pnpm_version: '7'
 jobs:
   npm:
     runs-on: ubuntu-latest
