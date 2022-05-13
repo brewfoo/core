@@ -1,7 +1,7 @@
 {
 	"id": 0,
 	"name": "@brewfoo/core",
-	"kind": 0,
+	"kind": 1,
 	"kindString": "Project",
 	"flags": {},
 	"originalName": "",
@@ -9,7 +9,7 @@
 		{
 			"id": 469,
 			"name": "AcidBlendType",
-			"kind": 4,
+			"kind": 8,
 			"kindString": "Enumeration",
 			"flags": {},
 			"children": [
@@ -49,7 +49,7 @@
 		{
 			"id": 482,
 			"name": "AcidType",
-			"kind": 4,
+			"kind": 8,
 			"kindString": "Enumeration",
 			"flags": {},
 			"children": [
@@ -201,7 +201,7 @@
 		{
 			"id": 250,
 			"name": "BeerColorFormula",
-			"kind": 4,
+			"kind": 8,
 			"kindString": "Enumeration",
 			"flags": {},
 			"children": [
@@ -273,7 +273,7 @@
 		{
 			"id": 1,
 			"name": "ColorUnit",
-			"kind": 4,
+			"kind": 8,
 			"kindString": "Enumeration",
 			"flags": {},
 			"children": [
@@ -345,7 +345,7 @@
 		{
 			"id": 24,
 			"name": "DiastaticPowerUnit",
-			"kind": 4,
+			"kind": 8,
 			"kindString": "Enumeration",
 			"flags": {},
 			"children": [
@@ -401,7 +401,7 @@
 		{
 			"id": 49,
 			"name": "DurationUnit",
-			"kind": 4,
+			"kind": 8,
 			"kindString": "Enumeration",
 			"flags": {},
 			"children": [
@@ -489,7 +489,7 @@
 		{
 			"id": 76,
 			"name": "EnergyUnit",
-			"kind": 4,
+			"kind": 8,
 			"kindString": "Enumeration",
 			"flags": {},
 			"children": [
@@ -545,7 +545,7 @@
 		{
 			"id": 94,
 			"name": "ExtractYieldUnit",
-			"kind": 4,
+			"kind": 8,
 			"kindString": "Enumeration",
 			"flags": {},
 			"children": [
@@ -601,7 +601,7 @@
 		{
 			"id": 113,
 			"name": "GravityUnit",
-			"kind": 4,
+			"kind": 8,
 			"kindString": "Enumeration",
 			"flags": {},
 			"children": [
@@ -673,7 +673,7 @@
 		{
 			"id": 294,
 			"name": "IBUFormula",
-			"kind": 4,
+			"kind": 8,
 			"kindString": "Enumeration",
 			"flags": {},
 			"children": [
@@ -729,7 +729,7 @@
 		{
 			"id": 145,
 			"name": "MassUnit",
-			"kind": 4,
+			"kind": 8,
 			"kindString": "Enumeration",
 			"flags": {},
 			"children": [
@@ -833,7 +833,7 @@
 		{
 			"id": 558,
 			"name": "SaltType",
-			"kind": 4,
+			"kind": 8,
 			"kindString": "Enumeration",
 			"flags": {},
 			"children": [
@@ -985,7 +985,7 @@
 		{
 			"id": 198,
 			"name": "TemperatureUnit",
-			"kind": 4,
+			"kind": 8,
 			"kindString": "Enumeration",
 			"flags": {},
 			"children": [
@@ -1057,7 +1057,7 @@
 		{
 			"id": 222,
 			"name": "VolumeUnit",
-			"kind": 4,
+			"kind": 8,
 			"kindString": "Enumeration",
 			"flags": {},
 			"children": [
@@ -1677,7 +1677,7 @@
 									"kindString": "Parameter",
 									"flags": {},
 									"comment": {
-										"text": "the weight of pure acid."
+										"shortText": "the weight of pure acid."
 									},
 									"type": {
 										"type": "reference",
@@ -1692,7 +1692,7 @@
 									"kindString": "Parameter",
 									"flags": {},
 									"comment": {
-										"text": "the volume of water."
+										"shortText": "the volume of water."
 									},
 									"type": {
 										"type": "reference",
@@ -1707,7 +1707,7 @@
 									"kindString": "Parameter",
 									"flags": {},
 									"comment": {
-										"text": "the target pH.\n"
+										"shortText": "the target pH.\n"
 									},
 									"type": {
 										"type": "intrinsic",
@@ -2302,7 +2302,6 @@
 					"kind": 512,
 					"kindString": "Constructor",
 					"flags": {},
-					"comment": {},
 					"sources": [
 						{
 							"fileName": "calc/beer-color.ts",
@@ -2386,7 +2385,7 @@
 									"kindString": "Parameter",
 									"flags": {},
 									"comment": {
-										"text": "the formula to apply."
+										"shortText": "the formula to apply."
 									},
 									"type": {
 										"type": "reference",
@@ -2723,7 +2722,6 @@
 					"kind": 512,
 					"kindString": "Constructor",
 					"flags": {},
-					"comment": {},
 					"sources": [
 						{
 							"fileName": "quantity/color.ts",
@@ -2973,7 +2971,6 @@
 					"kind": 512,
 					"kindString": "Constructor",
 					"flags": {},
-					"comment": {},
 					"sources": [
 						{
 							"fileName": "quantity/diastatic-power.ts",
@@ -3509,7 +3506,6 @@
 					"kind": 512,
 					"kindString": "Constructor",
 					"flags": {},
-					"comment": {},
 					"sources": [
 						{
 							"fileName": "quantity/duration.ts",
@@ -3767,7 +3763,7 @@
 									"kindString": "Parameter",
 									"flags": {},
 									"comment": {
-										"text": "value as minutes.\n"
+										"shortText": "value as minutes.\n"
 									},
 									"type": {
 										"type": "intrinsic",
@@ -3870,7 +3866,6 @@
 					"kind": 512,
 					"kindString": "Constructor",
 					"flags": {},
-					"comment": {},
 					"sources": [
 						{
 							"fileName": "quantity/energy.ts",
@@ -4119,7 +4114,6 @@
 					"kind": 512,
 					"kindString": "Constructor",
 					"flags": {},
-					"comment": {},
 					"sources": [
 						{
 							"fileName": "quantity/extract-yield.ts",
@@ -4323,7 +4317,7 @@
 									"kindString": "Parameter",
 									"flags": {},
 									"comment": {
-										"text": "value in %.\n"
+										"shortText": "value in %.\n"
 									},
 									"type": {
 										"type": "intrinsic",
@@ -4391,7 +4385,6 @@
 					"kind": 512,
 					"kindString": "Constructor",
 					"flags": {},
-					"comment": {},
 					"sources": [
 						{
 							"fileName": "calc/fermentation.ts",
@@ -4664,7 +4657,6 @@
 					"kind": 512,
 					"kindString": "Constructor",
 					"flags": {},
-					"comment": {},
 					"sources": [
 						{
 							"fileName": "calc/final-gravity.ts",
@@ -4837,7 +4829,6 @@
 					"kind": 512,
 					"kindString": "Constructor",
 					"flags": {},
-					"comment": {},
 					"sources": [
 						{
 							"fileName": "quantity/gravity.ts",
@@ -5227,7 +5218,7 @@
 									"kindString": "Parameter",
 									"flags": {},
 									"comment": {
-										"text": "value as gravity points.\n"
+										"shortText": "value as gravity points.\n"
 									},
 									"type": {
 										"type": "intrinsic",
@@ -5300,7 +5291,6 @@
 					"kind": 512,
 					"kindString": "Constructor",
 					"flags": {},
-					"comment": {},
 					"sources": [
 						{
 							"fileName": "calc/ibu.ts",
@@ -5561,7 +5551,7 @@
 									"kindString": "Parameter",
 									"flags": {},
 									"comment": {
-										"text": "the starting water profile."
+										"shortText": "the starting water profile."
 									},
 									"type": {
 										"type": "reference",
@@ -5626,7 +5616,6 @@
 					"kind": 512,
 					"kindString": "Constructor",
 					"flags": {},
-					"comment": {},
 					"sources": [
 						{
 							"fileName": "quantity/mass.ts",
@@ -5986,7 +5975,7 @@
 									"kindString": "Parameter",
 									"flags": {},
 									"comment": {
-										"text": "value as kg.\n"
+										"shortText": "value as kg.\n"
 									},
 									"type": {
 										"type": "intrinsic",
@@ -6088,7 +6077,6 @@
 					"kind": 512,
 					"kindString": "Constructor",
 					"flags": {},
-					"comment": {},
 					"sources": [
 						{
 							"fileName": "calc/recipe/index.ts",
@@ -6125,6 +6113,8 @@
 												"name": "RecipeCalc"
 											}
 										],
+										"qualifiedName": "Partial",
+										"package": ".pnpm",
 										"name": "Partial"
 									}
 								}
@@ -6249,7 +6239,7 @@
 						"id": 250,
 						"name": "BeerColorFormula"
 					},
-					"defaultValue": "..."
+					"defaultValue": "BeerColorFormula.Morey"
 				},
 				{
 					"id": 366,
@@ -6391,7 +6381,7 @@
 						"id": 294,
 						"name": "IBUFormula"
 					},
-					"defaultValue": "..."
+					"defaultValue": "IBUFormula.Tinseth"
 				},
 				{
 					"id": 370,
@@ -6491,9 +6481,6 @@
 					"kind": 262144,
 					"kindString": "Accessor",
 					"flags": {},
-					"comment": {
-						"returns": "ABV alcohol by volume in %\n"
-					},
 					"sources": [
 						{
 							"fileName": "calc/recipe/index.ts",
@@ -6524,9 +6511,6 @@
 					"kind": 262144,
 					"kindString": "Accessor",
 					"flags": {},
-					"comment": {
-						"returns": "ABW alcohol by weight\n"
-					},
 					"sources": [
 						{
 							"fileName": "calc/recipe/index.ts",
@@ -6558,9 +6542,6 @@
 					"kind": 262144,
 					"kindString": "Accessor",
 					"flags": {},
-					"comment": {
-						"returns": "the calculated boil gravity at the start of the boil\n"
-					},
 					"sources": [
 						{
 							"fileName": "calc/recipe/index.ts",
@@ -6592,9 +6573,6 @@
 					"kind": 262144,
 					"kindString": "Accessor",
 					"flags": {},
-					"comment": {
-						"returns": "the BU/GU ratio\n"
-					},
 					"sources": [
 						{
 							"fileName": "calc/recipe/index.ts",
@@ -6625,9 +6603,6 @@
 					"kind": 262144,
 					"kindString": "Accessor",
 					"flags": {},
-					"comment": {
-						"returns": "Diastatic power\n"
-					},
 					"sources": [
 						{
 							"fileName": "calc/recipe/index.ts",
@@ -6659,9 +6634,6 @@
 					"kind": 262144,
 					"kindString": "Accessor",
 					"flags": {},
-					"comment": {
-						"returns": "the calculated final gravity\n"
-					},
 					"sources": [
 						{
 							"fileName": "calc/recipe/index.ts",
@@ -6693,9 +6665,6 @@
 					"kind": 262144,
 					"kindString": "Accessor",
 					"flags": {},
-					"comment": {
-						"returns": "the resulting bitterness\n"
-					},
 					"sources": [
 						{
 							"fileName": "calc/recipe/index.ts",
@@ -6726,9 +6695,6 @@
 					"kind": 262144,
 					"kindString": "Accessor",
 					"flags": {},
-					"comment": {
-						"returns": "the calculated original gravity\n"
-					},
 					"sources": [
 						{
 							"fileName": "calc/recipe/index.ts",
@@ -6760,9 +6726,6 @@
 					"kind": 262144,
 					"kindString": "Accessor",
 					"flags": {},
-					"comment": {
-						"returns": "the resulting color\n"
-					},
 					"sources": [
 						{
 							"fileName": "calc/recipe/index.ts",
@@ -6794,9 +6757,6 @@
 					"kind": 262144,
 					"kindString": "Accessor",
 					"flags": {},
-					"comment": {
-						"returns": "Energetic value per 100ml\n"
-					},
 					"sources": [
 						{
 							"fileName": "calc/recipe/index.ts",
@@ -6828,9 +6788,6 @@
 					"kind": 262144,
 					"kindString": "Accessor",
 					"flags": {},
-					"comment": {
-						"returns": "Total mass of all fermentables\n"
-					},
 					"sources": [
 						{
 							"fileName": "calc/recipe/index.ts",
@@ -6892,9 +6849,6 @@
 					"kind": 262144,
 					"kindString": "Accessor",
 					"flags": {},
-					"comment": {
-						"returns": "Total mass of grains\n"
-					},
 					"sources": [
 						{
 							"fileName": "calc/recipe/index.ts",
@@ -6926,9 +6880,6 @@
 					"kind": 262144,
 					"kindString": "Accessor",
 					"flags": {},
-					"comment": {
-						"returns": "Water usage calculations.\n"
-					},
 					"sources": [
 						{
 							"fileName": "calc/recipe/index.ts",
@@ -6985,7 +6936,7 @@
 									"kindString": "Parameter",
 									"flags": {},
 									"comment": {
-										"text": "specific formula."
+										"shortText": "specific formula."
 									},
 									"type": {
 										"type": "reference",
@@ -7172,7 +7123,7 @@
 									"kindString": "Parameter",
 									"flags": {},
 									"comment": {
-										"text": "specific formula."
+										"shortText": "specific formula."
 									},
 									"type": {
 										"type": "reference",
@@ -7413,6 +7364,8 @@
 												"name": "Fermentable"
 											}
 										],
+										"qualifiedName": "Partial",
+										"package": ".pnpm",
 										"name": "Partial"
 									}
 								}
@@ -7860,6 +7813,8 @@
 												"name": "Hop"
 											}
 										],
+										"qualifiedName": "Partial",
+										"package": ".pnpm",
 										"name": "Partial"
 									}
 								}
@@ -8044,7 +7999,7 @@
 									"kindString": "Parameter",
 									"flags": {},
 									"comment": {
-										"text": "the IBU formula to use."
+										"shortText": "the IBU formula to use."
 									},
 									"type": {
 										"type": "reference",
@@ -8059,7 +8014,7 @@
 									"kindString": "Parameter",
 									"flags": {},
 									"comment": {
-										"text": "the volume of the batch."
+										"shortText": "the volume of the batch."
 									},
 									"type": {
 										"type": "reference",
@@ -8074,7 +8029,7 @@
 									"kindString": "Parameter",
 									"flags": {},
 									"comment": {
-										"text": "the gravity of the wort."
+										"shortText": "the gravity of the wort."
 									},
 									"type": {
 										"type": "reference",
@@ -8091,7 +8046,7 @@
 										"isOptional": true
 									},
 									"comment": {
-										"text": "the ambient temperature."
+										"shortText": "the ambient temperature."
 									},
 									"type": {
 										"type": "reference",
@@ -8139,7 +8094,7 @@
 									"kindString": "Parameter",
 									"flags": {},
 									"comment": {
-										"text": "the IBU formula to use."
+										"shortText": "the IBU formula to use."
 									},
 									"type": {
 										"type": "reference",
@@ -8154,7 +8109,7 @@
 									"kindString": "Parameter",
 									"flags": {},
 									"comment": {
-										"text": "the volume of the batch."
+										"shortText": "the volume of the batch."
 									},
 									"type": {
 										"type": "reference",
@@ -8169,7 +8124,7 @@
 									"kindString": "Parameter",
 									"flags": {},
 									"comment": {
-										"text": "the gravity of the wort."
+										"shortText": "the gravity of the wort."
 									},
 									"type": {
 										"type": "reference",
@@ -8186,7 +8141,7 @@
 										"isOptional": true
 									},
 									"comment": {
-										"text": "the ambient temperature."
+										"shortText": "the ambient temperature."
 									},
 									"type": {
 										"type": "reference",
@@ -8234,7 +8189,7 @@
 									"kindString": "Parameter",
 									"flags": {},
 									"comment": {
-										"text": "the IBU formula to use."
+										"shortText": "the IBU formula to use."
 									},
 									"type": {
 										"type": "reference",
@@ -8249,7 +8204,7 @@
 									"kindString": "Parameter",
 									"flags": {},
 									"comment": {
-										"text": "the recipe intance."
+										"shortText": "the recipe intance."
 									},
 									"type": {
 										"type": "reference",
@@ -8297,7 +8252,7 @@
 									"kindString": "Parameter",
 									"flags": {},
 									"comment": {
-										"text": "the IBU formula to use."
+										"shortText": "the IBU formula to use."
 									},
 									"type": {
 										"type": "reference",
@@ -8312,7 +8267,7 @@
 									"kindString": "Parameter",
 									"flags": {},
 									"comment": {
-										"text": "the recipe intance."
+										"shortText": "the recipe intance."
 									},
 									"type": {
 										"type": "reference",
@@ -8385,7 +8340,6 @@
 					"kind": 512,
 					"kindString": "Constructor",
 					"flags": {},
-					"comment": {},
 					"sources": [
 						{
 							"fileName": "calc/refractometer.ts",
@@ -8472,7 +8426,7 @@
 									"kindString": "Parameter",
 									"flags": {},
 									"comment": {
-										"text": "start refractometer value as °Brix."
+										"shortText": "start refractometer value as °Brix."
 									},
 									"type": {
 										"type": "intrinsic",
@@ -8486,7 +8440,7 @@
 									"kindString": "Parameter",
 									"flags": {},
 									"comment": {
-										"text": "finish refractometer value as °Brix."
+										"shortText": "finish refractometer value as °Brix."
 									},
 									"type": {
 										"type": "intrinsic",
@@ -8534,7 +8488,7 @@
 									"kindString": "Parameter",
 									"flags": {},
 									"comment": {
-										"text": "refractometer value as °Brix."
+										"shortText": "refractometer value as °Brix."
 									},
 									"type": {
 										"type": "intrinsic",
@@ -8581,7 +8535,7 @@
 									"kindString": "Parameter",
 									"flags": {},
 									"comment": {
-										"text": "start refractometer value as °Brix."
+										"shortText": "start refractometer value as °Brix."
 									},
 									"type": {
 										"type": "intrinsic",
@@ -8595,7 +8549,7 @@
 									"kindString": "Parameter",
 									"flags": {},
 									"comment": {
-										"text": "finish refractometer value as °Brix."
+										"shortText": "finish refractometer value as °Brix."
 									},
 									"type": {
 										"type": "intrinsic",
@@ -9363,7 +9317,6 @@
 					"kind": 512,
 					"kindString": "Constructor",
 					"flags": {},
-					"comment": {},
 					"sources": [
 						{
 							"fileName": "quantity/specific-volume.ts",
@@ -9597,7 +9550,7 @@
 									"kindString": "Parameter",
 									"flags": {},
 									"comment": {
-										"text": "value as L/kg.\n"
+										"shortText": "value as L/kg.\n"
 									},
 									"type": {
 										"type": "intrinsic",
@@ -9664,7 +9617,6 @@
 					"kind": 512,
 					"kindString": "Constructor",
 					"flags": {},
-					"comment": {},
 					"sources": [
 						{
 							"fileName": "quantity/temperature.ts",
@@ -9938,7 +9890,7 @@
 									"kindString": "Parameter",
 									"flags": {},
 									"comment": {
-										"text": "value as °C\n"
+										"shortText": "value as °C\n"
 									},
 									"type": {
 										"type": "intrinsic",
@@ -10008,7 +9960,6 @@
 					"kind": 512,
 					"kindString": "Constructor",
 					"flags": {},
-					"comment": {},
 					"sources": [
 						{
 							"fileName": "calc/utilization.ts",
@@ -10175,7 +10126,7 @@
 									"kindString": "Parameter",
 									"flags": {},
 									"comment": {
-										"text": "IBU formula to use."
+										"shortText": "IBU formula to use."
 									},
 									"type": {
 										"type": "reference",
@@ -10363,7 +10314,6 @@
 					"kind": 512,
 					"kindString": "Constructor",
 					"flags": {},
-					"comment": {},
 					"sources": [
 						{
 							"fileName": "quantity/volume.ts",
@@ -10661,7 +10611,7 @@
 									"kindString": "Parameter",
 									"flags": {},
 									"comment": {
-										"text": "value as L\n"
+										"shortText": "value as L\n"
 									},
 									"type": {
 										"type": "intrinsic",
@@ -10730,7 +10680,6 @@
 					"kind": 512,
 					"kindString": "Constructor",
 					"flags": {},
-					"comment": {},
 					"sources": [
 						{
 							"fileName": "water/profile.ts",
@@ -10766,6 +10715,8 @@
 												"name": "WaterFragment"
 											}
 										],
+										"qualifiedName": "Partial",
+										"package": ".pnpm",
 										"name": "Partial"
 									}
 								}
@@ -11197,7 +11148,7 @@
 									"kindString": "Parameter",
 									"flags": {},
 									"comment": {
-										"text": "the water volume."
+										"shortText": "the water volume."
 									},
 									"type": {
 										"type": "reference",
@@ -11212,7 +11163,7 @@
 									"kindString": "Parameter",
 									"flags": {},
 									"comment": {
-										"text": "the array of treatments.\n"
+										"shortText": "the array of treatments.\n"
 									},
 									"type": {
 										"type": "array",
@@ -11434,7 +11385,6 @@
 					"kind": 512,
 					"kindString": "Constructor",
 					"flags": {},
-					"comment": {},
 					"sources": [
 						{
 							"fileName": "water/usage.ts",
@@ -12096,6 +12046,7 @@
 							"flags": {},
 							"type": {
 								"type": "reference",
+								"id": 670,
 								"name": "T"
 							}
 						},
@@ -12112,9 +12063,12 @@
 								"typeArguments": [
 									{
 										"type": "reference",
+										"id": 670,
 										"name": "T"
 									}
 								],
+								"qualifiedName": "Partial",
+								"package": ".pnpm",
 								"name": "Partial"
 							}
 						}
@@ -12194,7 +12148,7 @@
 	"groups": [
 		{
 			"title": "Enumerations",
-			"kind": 4,
+			"kind": 8,
 			"children": [
 				469,
 				482,
